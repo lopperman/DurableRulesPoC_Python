@@ -1,0 +1,10 @@
+{
+    "Device_Vendor": "fortinet",
+    "Device_Type": "firewall",
+    "Device_Function_Code": "SEC",
+    "Device_SubFunction_Code": "SEC",
+    "Is_Virtual": false,
+    "Site_Location": "AMS",
+    "Managed_By_Group": "secops",
+    "Supported_By_Group": "infra"
+}

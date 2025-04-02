@@ -1,0 +1,9 @@
+{
+    "Device_Vendor": "cisco",
+    "Device_Type": "switch",
+    "Device_Function_Code": "SEC",
+    "Site_Location": "NYC",
+    "Is_Virtual": true,
+    "Managed_By_Group": "netops",
+    "Supported_By_Group": "infra"
+}

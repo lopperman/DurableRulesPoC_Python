@@ -1,0 +1,10 @@
+{
+    "Device_Vendor": "juniper",
+    "Device_Type": "context",
+    "Device_Function_Code": "UNK",
+    "Site_Location": "TX",
+    "Is_Virtual": true,
+    "Device_SubFunction_Code": "00",
+    "Managed_By_Group": "dev",
+    "Supported_By_Group": "ops"
+}
