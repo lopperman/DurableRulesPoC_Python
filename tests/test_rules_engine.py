@@ -16,7 +16,7 @@ SERVICES = {
 }
 
 # Folder with your test request files
-TEST_REQUESTS_DIR = ".venv/test_requests"
+TEST_REQUESTS_DIR = "./tests/test_requests"
 TEST_FILES = [
     "matches_firewall.json",
     "matches_nothing.json",
@@ -45,7 +45,7 @@ if __name__ == "__main__":
         try:
             with open(full_path) as f:
                 data = json.load(f)
-            response = requests.post("http://localhost:5000/evaluate", json=data)
+            response = requests.post("http://localhost:5010/evaluate", json=data)
             print("Qualified Tasks:", response.json().get("qualified_tasks"))
         except Exception as e:
             print(f"Error processing {filename}: {e}")
@@ -53,4 +53,11 @@ if __name__ == "__main__":
     # Cleanup
     print("\nStopping all services...")
     for p in procs:
-        p.terminate()
+        print(f"Stopping process {p.pid}")
+        if p.is_alive():
+            p.kill()  # More forceful than terminate()
+            p.join(timeout=2)  # Wait up to 2 seconds for process to end
+            if p.is_alive():
+                print(f"Warning: Process {p.pid} could not be killed")
+        else:
+            print(f"Process {p.pid} killed successfully")
