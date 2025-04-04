@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "kill-ports",
+            "type": "shell",
+            "command": "lsof -ti :5010,:5001,:5002,:5003 | xargs kill -9 || true",
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "cleanup-resources",
+            "type": "shell",
+            "command": "pkill -f 'python.*test_rules_engine.py' || true",
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
