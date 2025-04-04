@@ -1,43 +1,23 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        // {
-        //     "name": "Python Debugger: Current File",
-        //     "type": "debugpy",
-        //     "request": "launch",
-        //     "program": "${file}",
-        //     "console": "integratedTerminal"
-        // },
-        // {
-        //     "name": "Python: Test Rules Engine",
-        //     "type": "python",
-        //     "request": "launch",
-        //     "program": "${workspaceFolder}/tests/test_rules_engine.py",
-        //     "console": "integratedTerminal",
-        //     "justMyCode": true,
-        //     "env": {
-        //         "PYTHONPATH": "${workspaceFolder}",
-        //         "FLASK_ENV": "development",
-        //         "FLASK_DEBUG": "1"
-        //     },
-        //     "envFile": "${workspaceFolder}/.env"
-        // },
         {
-            "name": "Flask: Debug Tests",
+            "name": "Python: Test Rules Engine",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/tests/test_rules_engine.py",
             "console": "integratedTerminal",
             "justMyCode": true,
             "env": {
-                "FLASK_APP": "router.py",
+                "PYTHONPATH": "${workspaceFolder}",
                 "FLASK_ENV": "development",
                 "FLASK_DEBUG": "1",
-                "PYTHONPATH": "${workspaceFolder}"
-            }
+                "PYTHONWARNINGS": "ignore:resource_tracker:UserWarning"
+            },
+            "python": "${command:python.interpreterPath}",
+            "preLaunchTask": "kill-ports",
+            "postDebugTask": "cleanup-resources",
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
